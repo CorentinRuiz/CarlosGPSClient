@@ -106,7 +106,7 @@
         <version>2.3.2</version>
         <configuration>
             <wsdlUrls>
-                <wsdlUrl>http://localhost:8733/server/Service1?singleWsdl</wsdlUrl>
+                <wsdlUrl>http://localhost:8733/server/Service1?wsdl</wsdlUrl>
             </wsdlUrls>
             <keep>true</keep>
             <packageName>com.baeldung.soap.ws.client.generated</packageName>
@@ -121,7 +121,7 @@
                 <execution>
                     <id>default-cli</id>
                     <configuration>
-                        <mainClass>org.example.Main</mainClass>
+                        <mainClass>org.carlosgps.Main</mainClass>
                     </configuration>
                 </execution>
             </executions>

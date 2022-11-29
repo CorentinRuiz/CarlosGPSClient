@@ -28,6 +28,11 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _BestItinerary_QNAME = new QName("http://schemas.datacontract.org/2004/07/server", "BestItinerary");
+    private final static QName _ArrayOfArrayOfdouble_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfArrayOfdouble");
+    private final static QName _ArrayOfdouble_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfdouble");
+    private final static QName _ArrayOfInstruction_QNAME = new QName("http://schemas.datacontract.org/2004/07/OSMElement", "ArrayOfInstruction");
+    private final static QName _Instruction_QNAME = new QName("http://schemas.datacontract.org/2004/07/OSMElement", "Instruction");
     private final static QName _AnyType_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyType");
     private final static QName _AnyURI_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyURI");
     private final static QName _Base64Binary_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "base64Binary");
@@ -49,11 +54,6 @@ public class ObjectFactory {
     private final static QName _Char_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "char");
     private final static QName _Duration_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "duration");
     private final static QName _Guid_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "guid");
-    private final static QName _BestItinerary_QNAME = new QName("http://schemas.datacontract.org/2004/07/server", "BestItinerary");
-    private final static QName _ArrayOfArrayOfdouble_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfArrayOfdouble");
-    private final static QName _ArrayOfdouble_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfdouble");
-    private final static QName _ArrayOfInstruction_QNAME = new QName("http://schemas.datacontract.org/2004/07/OSMElement", "ArrayOfInstruction");
-    private final static QName _Instruction_QNAME = new QName("http://schemas.datacontract.org/2004/07/OSMElement", "Instruction");
     private final static QName _GetItineraryOrigin_QNAME = new QName("http://tempuri.org/", "origin");
     private final static QName _GetItineraryDestination_QNAME = new QName("http://tempuri.org/", "destination");
     private final static QName _GetItineraryResponseGetItineraryResult_QNAME = new QName("http://tempuri.org/", "GetItineraryResult");
@@ -123,6 +123,71 @@ public class ObjectFactory {
      */
     public Instruction createInstruction() {
         return new Instruction();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BestItinerary }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BestItinerary }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/server", name = "BestItinerary")
+    public JAXBElement<BestItinerary> createBestItinerary(BestItinerary value) {
+        return new JAXBElement<BestItinerary>(_BestItinerary_QNAME, BestItinerary.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfArrayOfdouble }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfArrayOfdouble }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays", name = "ArrayOfArrayOfdouble")
+    public JAXBElement<ArrayOfArrayOfdouble> createArrayOfArrayOfdouble(ArrayOfArrayOfdouble value) {
+        return new JAXBElement<ArrayOfArrayOfdouble>(_ArrayOfArrayOfdouble_QNAME, ArrayOfArrayOfdouble.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays", name = "ArrayOfdouble")
+    public JAXBElement<ArrayOfdouble> createArrayOfdouble(ArrayOfdouble value) {
+        return new JAXBElement<ArrayOfdouble>(_ArrayOfdouble_QNAME, ArrayOfdouble.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfInstruction }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfInstruction }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OSMElement", name = "ArrayOfInstruction")
+    public JAXBElement<ArrayOfInstruction> createArrayOfInstruction(ArrayOfInstruction value) {
+        return new JAXBElement<ArrayOfInstruction>(_ArrayOfInstruction_QNAME, ArrayOfInstruction.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Instruction }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Instruction }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OSMElement", name = "Instruction")
+    public JAXBElement<Instruction> createInstruction(Instruction value) {
+        return new JAXBElement<Instruction>(_Instruction_QNAME, Instruction.class, null, value);
     }
 
     /**
@@ -396,71 +461,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "guid")
     public JAXBElement<String> createGuid(String value) {
         return new JAXBElement<String>(_Guid_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BestItinerary }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link BestItinerary }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/server", name = "BestItinerary")
-    public JAXBElement<BestItinerary> createBestItinerary(BestItinerary value) {
-        return new JAXBElement<BestItinerary>(_BestItinerary_QNAME, BestItinerary.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfArrayOfdouble }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfArrayOfdouble }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays", name = "ArrayOfArrayOfdouble")
-    public JAXBElement<ArrayOfArrayOfdouble> createArrayOfArrayOfdouble(ArrayOfArrayOfdouble value) {
-        return new JAXBElement<ArrayOfArrayOfdouble>(_ArrayOfArrayOfdouble_QNAME, ArrayOfArrayOfdouble.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays", name = "ArrayOfdouble")
-    public JAXBElement<ArrayOfdouble> createArrayOfdouble(ArrayOfdouble value) {
-        return new JAXBElement<ArrayOfdouble>(_ArrayOfdouble_QNAME, ArrayOfdouble.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfInstruction }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfInstruction }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OSMElement", name = "ArrayOfInstruction")
-    public JAXBElement<ArrayOfInstruction> createArrayOfInstruction(ArrayOfInstruction value) {
-        return new JAXBElement<ArrayOfInstruction>(_ArrayOfInstruction_QNAME, ArrayOfInstruction.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Instruction }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Instruction }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OSMElement", name = "Instruction")
-    public JAXBElement<Instruction> createInstruction(Instruction value) {
-        return new JAXBElement<Instruction>(_Instruction_QNAME, Instruction.class, null, value);
     }
 
     /**

@@ -1,0 +1,17 @@
+com\baeldung\soap\ws\client\generated\ObjectFactory.class
+org\carlosgps\classes\ItineraryRequesterService.class
+org\carlosgps\classes\GPSPoint.class
+org\carlosgps\classes\InstructionsConsumer.class
+com\baeldung\soap\ws\client\generated\GetItinerary.class
+com\baeldung\soap\ws\client\generated\package-info.class
+com\baeldung\soap\ws\client\generated\ArrayOfInstruction.class
+com\baeldung\soap\ws\client\generated\Instruction.class
+com\baeldung\soap\ws\client\generated\GetItineraryResponse.class
+com\baeldung\soap\ws\client\generated\Service1.class
+org\carlosgps\gui\GuiApp.class
+org\carlosgps\gui\MainController.class
+org\carlosgps\Main.class
+com\baeldung\soap\ws\client\generated\ArrayOfArrayOfdouble.class
+com\baeldung\soap\ws\client\generated\IService1.class
+com\baeldung\soap\ws\client\generated\BestItinerary.class
+com\baeldung\soap\ws\client\generated\ArrayOfdouble.class

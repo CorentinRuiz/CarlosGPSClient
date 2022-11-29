@@ -1,4 +1,4 @@
-package org.example;
+package org.carlosgps.classes;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
