@@ -8,11 +8,8 @@ public class Main  {
 
 
     public static void main(String[] args) {
-
         InstructionsConsumer consumer = new InstructionsConsumer();
         consumer.run();
-
-
 
         GuiApp.main();
     }

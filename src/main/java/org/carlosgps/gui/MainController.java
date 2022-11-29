@@ -50,18 +50,23 @@ public class MainController implements Initializable {
     }
 
     public void displayPath(){
-        String originAdress = origin.getText().toString();
-        String destAdress = destination.getText().toString();
+        String originAddress = origin.getText().toString();
+        String destAddress = destination.getText().toString();
 
         ItineraryRequesterService itineraryRequesterService = new ItineraryRequesterService();
-        itineraryRequesterService.setBestItinerary(originAdress,destAdress);
+        itineraryRequesterService.setBestItinerary(originAddress,destAddress);
 
         totalDistanceResult.setText(itineraryRequesterService.getTotalDistance().toString() +" m");
 
-        System.out.println(itineraryRequesterService.getOriginPoint().toString());
-        System.out.println(itineraryRequesterService.getDestinationPoint().toString());
+
         engine.getDocument().getElementById("origin").setAttribute("value",itineraryRequesterService.getOriginPoint().toString());
         engine.getDocument().getElementById("dest").setAttribute("value",itineraryRequesterService.getDestinationPoint().toString());
+
+        if(itineraryRequesterService.getFirstStationPoint() != null) {
+            String waypoints = itineraryRequesterService.getFirstStationPoint().toString() + ";" + itineraryRequesterService.getLastStationPoint().toString();
+
+            engine.getDocument().getElementById("waypoint").setAttribute("value", waypoints);
+        }
 
         engine.executeScript("document.getElementById('submit').click()");
     }

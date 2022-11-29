@@ -29,6 +29,23 @@ public class ItineraryRequesterService {
         return new GPSPoint(destAPIFormat.get(destAPIFormat.size()-1),destAPIFormat.get(0));
     }
 
+    public GPSPoint getFirstStationPoint(){
+        if(bestItinerary.getPoints().getValue().getArrayOfdouble().size() == 4){
+            List<Double> stationPointAPIFormat = bestItinerary.getPoints().getValue().getArrayOfdouble().get(1).getDouble();
+            return new GPSPoint(stationPointAPIFormat.get(stationPointAPIFormat.size()-1),stationPointAPIFormat.get(0));
+        }
+
+        return null;
+    }
+
+    public GPSPoint getLastStationPoint(){
+        if(bestItinerary.getPoints().getValue().getArrayOfdouble().size() == 4){
+            List<Double> stationPointAPIFormat = bestItinerary.getPoints().getValue().getArrayOfdouble().get(2).getDouble();
+            return new GPSPoint(stationPointAPIFormat.get(stationPointAPIFormat.size()-1),stationPointAPIFormat.get(0));
+        }
+        return null;
+    }
+
     public Double getTotalDistance(){
         return Math.round(bestItinerary.getDistance() * 100.0) / 100.0;
     }

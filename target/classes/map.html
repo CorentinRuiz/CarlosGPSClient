@@ -33,8 +33,9 @@
 </head>
 <body>
 <div id="floating-panel">
-    <input id="origin" type="text" value="France">
-    <input id="dest" type="text" value="France">
+    <input id="origin" type="text">
+    <input id="dest" type="text" >
+    <input id="waypoint" type="text">
     <input id="submit" type="button" value="Find">
 </div>
 <div id="map"></div>
@@ -51,14 +52,25 @@
 					map: map
 				});
 
-				//calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointC,waypts);
 
 				document.getElementById('submit').addEventListener('click', function() {
 					calculateAndDisplayRoute(directionsService, directionsDisplay);
 				});
 		}
 
-		function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+		function createWaypoint(waypoint){
+			var wayptsArray = waypoint.split(";");
+
+			var wayptsResult = [];
+
+			for(const waypoint of wayptsArray){
+				wayptsResult.push({location: new google.maps.LatLng(waypoint.split(",")[0],waypoint.split(",")[1]) , stopover: true});
+			}
+
+			return wayptsResult;
+		}
+
+		function calculateAndDisplayRoute(directionsService, directionsDisplay,waypts) {
 
 			let origin = document.getElementById("origin").value;
 			let originPoint = new google.maps.LatLng(parseFloat(origin.split(",")[0]), parseFloat(origin.split(",")[1]));
@@ -66,9 +78,15 @@
 			let dest = document.getElementById("dest").value;
 			let destPoint = new google.maps.LatLng(parseFloat(dest.split(",")[0]), parseFloat(dest.split(",")[1]));
 
+			let waypoints = document.getElementById("waypoint").value;
+
+			let wayptsArray = createWaypoint(waypoints);
+
 			directionsService.route({
 				origin: originPoint,
 				destination: destPoint,
+				waypoints: wayptsArray,
+				optimizeWaypoints:false,
 				avoidTolls: true,
 				avoidHighways: false,
 				travelMode: google.maps.TravelMode.DRIVING
@@ -81,22 +99,8 @@
     		});
 		}
 
-		function geocodeAddress(geocoder, resultsMap) {
-			var address = document.getElementById('address').value;
-			geocoder.geocode({'address': address}, function(results, status) {
-				if (status === 'OK') {
-					resultsMap.setCenter(results[0].geometry.location);
-					var marker = new google.maps.Marker({
-						map: resultsMap,
-						position: results[0].geometry.location
-					});
-				} else {
-					alert('Geocode was not successful for the following reason: ' + status);
-				}
-			});
-		}
 
-		
+
         </script>
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
