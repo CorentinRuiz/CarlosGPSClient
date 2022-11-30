@@ -18,7 +18,7 @@ public class GuiApp extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(GuiApp.class.getClassLoader().getResource("main-view.fxml")));
 
         Scene scene = new Scene(root, 1200, 800);
-        stage.getIcons().add(new Image(System.getProperty("user.dir") + "\\src\\main\\resources\\org.carlos.gps.client.icons\\carte32.png"));
+        stage.getIcons().add(new Image(getClass().getClassLoader().getResource("icons/carte32.png").toString()));
         stage.setTitle("Carlos GPS");
         stage.initStyle(StageStyle.UNDECORATED);
 

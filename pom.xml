@@ -63,37 +63,37 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>19</version>
+            <version>17.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
-            <version>19</version>
+            <version>17.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
-            <version>19</version>
+            <version>17.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
-            <version>19</version>
+            <version>17.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>19</version>
+            <version>17.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx</artifactId>
-            <version>19</version>
+            <version>17.0.2</version>
             <type>pom</type>
         </dependency>
 
@@ -106,7 +106,8 @@
         <version>2.3.2</version>
         <configuration>
             <wsdlUrls>
-                <wsdlUrl>http://localhost:8733/server/Service1?wsdl</wsdlUrl>
+                <wsdlUrl>http://localhost:8733/server/Service1?wsdl
+                </wsdlUrl>
             </wsdlUrls>
             <keep>true</keep>
             <packageName>com.baeldung.soap.ws.client.generated</packageName>

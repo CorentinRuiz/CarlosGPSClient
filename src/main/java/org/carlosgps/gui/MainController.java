@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import org.carlosgps.classes.ItineraryRequesterService;
 
 
@@ -32,6 +33,9 @@ public class MainController implements Initializable {
     @FXML
     private WebView webView;
 
+    @FXML
+    private Label minimize;
+
     private WebEngine engine;
 
     @Override
@@ -47,6 +51,11 @@ public class MainController implements Initializable {
 
     public void exitApp(){
         System.exit(1);
+    }
+
+    public void minimizeApp(){
+        Stage stage = (Stage) minimize.getScene().getWindow();
+        stage.setIconified(true);
     }
 
     public void displayPath(){
