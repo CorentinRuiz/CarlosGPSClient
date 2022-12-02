@@ -28,7 +28,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _BestItinerary_QNAME = new QName("http://schemas.datacontract.org/2004/07/server", "BestItinerary");
+    private final static QName _BestItinerary_QNAME = new QName("http://schemas.datacontract.org/2004/07/RoutingServer", "BestItinerary");
     private final static QName _ArrayOfArrayOfdouble_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfArrayOfdouble");
     private final static QName _ArrayOfdouble_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfdouble");
     private final static QName _ArrayOfInstruction_QNAME = new QName("http://schemas.datacontract.org/2004/07/OSMElement", "ArrayOfInstruction");
@@ -58,9 +58,9 @@ public class ObjectFactory {
     private final static QName _GetItineraryDestination_QNAME = new QName("http://tempuri.org/", "destination");
     private final static QName _GetItineraryResponseGetItineraryResult_QNAME = new QName("http://tempuri.org/", "GetItineraryResult");
     private final static QName _InstructionText_QNAME = new QName("http://schemas.datacontract.org/2004/07/OSMElement", "text");
-    private final static QName _BestItineraryCoordinates_QNAME = new QName("http://schemas.datacontract.org/2004/07/server", "Coordinates");
-    private final static QName _BestItineraryInstructions_QNAME = new QName("http://schemas.datacontract.org/2004/07/server", "Instructions");
-    private final static QName _BestItineraryPoints_QNAME = new QName("http://schemas.datacontract.org/2004/07/server", "Points");
+    private final static QName _BestItineraryCoordinates_QNAME = new QName("http://schemas.datacontract.org/2004/07/RoutingServer", "Coordinates");
+    private final static QName _BestItineraryInstructions_QNAME = new QName("http://schemas.datacontract.org/2004/07/RoutingServer", "Instructions");
+    private final static QName _BestItineraryPoints_QNAME = new QName("http://schemas.datacontract.org/2004/07/RoutingServer", "Points");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.baeldung.soap.ws.client.generated
@@ -133,7 +133,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link BestItinerary }{@code >}
      */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/server", name = "BestItinerary")
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", name = "BestItinerary")
     public JAXBElement<BestItinerary> createBestItinerary(BestItinerary value) {
         return new JAXBElement<BestItinerary>(_BestItinerary_QNAME, BestItinerary.class, null, value);
     }
@@ -523,7 +523,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfArrayOfdouble }{@code >}
      */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/server", name = "Coordinates", scope = BestItinerary.class)
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", name = "Coordinates", scope = BestItinerary.class)
     public JAXBElement<ArrayOfArrayOfdouble> createBestItineraryCoordinates(ArrayOfArrayOfdouble value) {
         return new JAXBElement<ArrayOfArrayOfdouble>(_BestItineraryCoordinates_QNAME, ArrayOfArrayOfdouble.class, BestItinerary.class, value);
     }
@@ -536,7 +536,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfInstruction }{@code >}
      */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/server", name = "Instructions", scope = BestItinerary.class)
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", name = "Instructions", scope = BestItinerary.class)
     public JAXBElement<ArrayOfInstruction> createBestItineraryInstructions(ArrayOfInstruction value) {
         return new JAXBElement<ArrayOfInstruction>(_BestItineraryInstructions_QNAME, ArrayOfInstruction.class, BestItinerary.class, value);
     }
@@ -549,7 +549,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfArrayOfdouble }{@code >}
      */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/server", name = "Points", scope = BestItinerary.class)
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", name = "Points", scope = BestItinerary.class)
     public JAXBElement<ArrayOfArrayOfdouble> createBestItineraryPoints(ArrayOfArrayOfdouble value) {
         return new JAXBElement<ArrayOfArrayOfdouble>(_BestItineraryPoints_QNAME, ArrayOfArrayOfdouble.class, BestItinerary.class, value);
     }

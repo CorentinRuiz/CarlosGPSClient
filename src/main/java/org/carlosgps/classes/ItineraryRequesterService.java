@@ -1,22 +1,25 @@
 package org.carlosgps.classes;
 
+import com.baeldung.soap.ws.client.generated.ArrayOfdouble;
 import com.baeldung.soap.ws.client.generated.BestItinerary;
-import com.baeldung.soap.ws.client.generated.IService1;
-import com.baeldung.soap.ws.client.generated.Service1;
+import com.baeldung.soap.ws.client.generated.IRoutingService;
+import com.baeldung.soap.ws.client.generated.RoutingService;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItineraryRequesterService {
 
-    Service1 service1;
+    RoutingService routingService;
 
-    IService1 proxyService1;
+    IRoutingService routingServiceInterface;
 
     BestItinerary bestItinerary;
 
     public ItineraryRequesterService() {
-        service1 = new Service1();
-        proxyService1 = service1.getBasicHttpBindingIService1();
+        routingService = new RoutingService();
+        routingServiceInterface = routingService.getBasicHttpBindingIRoutingService();
     }
 
     public GPSPoint getOriginPoint(){
@@ -38,6 +41,17 @@ public class ItineraryRequesterService {
         return null;
     }
 
+    public List<GPSPoint> getWayPoints(){
+        List<ArrayOfdouble> wayPointsPointAPIFormat = bestItinerary.getCoordinates().getValue().getArrayOfdouble();
+        List<GPSPoint> waypts = new ArrayList<>();
+
+        for(ArrayOfdouble latLng : wayPointsPointAPIFormat){
+            waypts.add(new GPSPoint(latLng.getDouble().get(latLng.getDouble().size()-1),latLng.getDouble().get(0)));
+        }
+
+        return waypts;
+    }
+
     public GPSPoint getLastStationPoint(){
         if(bestItinerary.getPoints().getValue().getArrayOfdouble().size() == 4){
             List<Double> stationPointAPIFormat = bestItinerary.getPoints().getValue().getArrayOfdouble().get(2).getDouble();
@@ -51,6 +65,6 @@ public class ItineraryRequesterService {
     }
 
     public void setBestItinerary(String origin, String destination) {
-       bestItinerary = proxyService1.getItinerary(origin,destination);
+       bestItinerary = routingServiceInterface.getItinerary(origin,destination);
     }
 }

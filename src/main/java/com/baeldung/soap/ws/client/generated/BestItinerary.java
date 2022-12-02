@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BestItinerary", namespace = "http://schemas.datacontract.org/2004/07/server", propOrder = {
+@XmlType(name = "BestItinerary", namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", propOrder = {
     "coordinates",
     "distance",
     "instructions",
@@ -42,13 +42,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BestItinerary {
 
-    @XmlElementRef(name = "Coordinates", namespace = "http://schemas.datacontract.org/2004/07/server", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Coordinates", namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfArrayOfdouble> coordinates;
     @XmlElement(name = "Distance")
     protected Double distance;
-    @XmlElementRef(name = "Instructions", namespace = "http://schemas.datacontract.org/2004/07/server", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Instructions", namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfInstruction> instructions;
-    @XmlElementRef(name = "Points", namespace = "http://schemas.datacontract.org/2004/07/server", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Points", namespace = "http://schemas.datacontract.org/2004/07/RoutingServer", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfArrayOfdouble> points;
     @XmlElement(name = "Time")
     protected Integer time;

@@ -7,6 +7,8 @@ import java.beans.ExceptionListener;
 
 public class InstructionsConsumer implements Runnable, ExceptionListener {
 
+        private String instructions = null;
+
         public void run() {
             try {
 
@@ -33,10 +35,10 @@ public class InstructionsConsumer implements Runnable, ExceptionListener {
 
                 if (message instanceof TextMessage) {
                     TextMessage textMessage = (TextMessage) message;
-                    String text = textMessage.getText();
-                    System.out.println("Received: " + text);
+                    instructions = textMessage.getText();
+
                 } else {
-                    System.out.println("Received: " + message);
+                    instructions = message.toString();
                 }
 
                 consumer.close();
@@ -48,6 +50,9 @@ public class InstructionsConsumer implements Runnable, ExceptionListener {
             }
         }
 
+    public String getInstructions() {
+        return instructions;
+    }
 
     @Override
     public void exceptionThrown(Exception e) {

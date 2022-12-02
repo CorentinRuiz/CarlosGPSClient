@@ -46,7 +46,7 @@
                               <Insets top="15.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="minimize" layoutX="27.0" layoutY="7.0" text="_" textFill="WHITE">
+                        <Label fx:id="minimize" layoutX="27.0" layoutY="7.0" onMouseClicked="#minimizeApp" style="-fx-cursor: HAND;" text="_" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -147,10 +147,26 @@
                         <Insets top="40.0" />
                      </VBox.margin>
                      <children>
-                        <Label layoutX="179.0" layoutY="89.0" prefHeight="29.0" prefWidth="19.0" textFill="WHITE">
+                        <Label fx:id="instructions" layoutX="16.0" layoutY="40.0" prefHeight="88.0" prefWidth="354.0" textFill="WHITE">
                            <font>
-                              <Font name="Open Sans" size="20.0" />
+                              <Font size="18.0" />
                            </font>
+                           <graphic>
+                              <ImageView fx:id="instructPicture" fitHeight="60.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </Label>
+                        <Button fx:id="submit1" layoutX="257.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#displayInstruction" prefHeight="37.0" prefWidth="106.0" style="-fx-background-radius: 50px; -fx-background-color: #3869a6; -fx-cursor: HAND;" text="SUIVANT" textFill="#fffefe">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="-3.0" layoutY="-1.0" prefHeight="30.0" prefWidth="208.0" style="-fx-font-weight: bold;" text="Affichages des instructions :" textFill="WHITE">
+                           <font>
+                              <Font name="Open Sans" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" top="10.0" />
+                           </padding>
                         </Label>
                      </children>
                   </Pane>

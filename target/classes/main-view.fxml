@@ -21,7 +21,7 @@
          <top>
             <HBox prefHeight="74.0" prefWidth="1200.0" style="-fx-background-color: #455D7B;" BorderPane.alignment="TOP_LEFT">
                <children>
-                  <Label alignment="BASELINE_LEFT" prefHeight="43.0" prefWidth="181.0" style="-fx-alignment: center;" text="Carlos GPS" textFill="WHITE">
+                  <Label alignment="BASELINE_LEFT" prefHeight="43.0" prefWidth="417.0" style="-fx-alignment: center;" text="Carlos GPS" textFill="WHITE">
                      <font>
                         <Font name="Open Sans Bold" size="20.0" />
                      </font>
@@ -31,14 +31,14 @@
                      <graphic>
                         <ImageView fitHeight="43.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@./org.carlos.gps.client.icons/carte64.png" />
+                              <Image url="@icons/carte64.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Label>
-                  <Pane prefHeight="57.0" prefWidth="32.0">
+                  <Pane prefHeight="74.0" prefWidth="346.0">
                      <children>
-                        <Label fx:id="exitCross" onMouseClicked="#exitApp" style="-fx-cursor: HAND;" text="X" textFill="WHITE">
+                        <Label layoutX="63.0" layoutY="-2.0" onMouseClicked="#exitApp" prefHeight="49.0" prefWidth="26.0" style="-fx-cursor: HAND;" text="X" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -46,9 +46,14 @@
                               <Insets top="15.0" />
                            </padding>
                         </Label>
+                        <Label fx:id="minimize" layoutX="27.0" layoutY="7.0" onMouseClicked="#minimizeApp" style="-fx-cursor: HAND;" text="_" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
                      </children>
                      <HBox.margin>
-                        <Insets left="940.0" />
+                        <Insets left="890.0" />
                      </HBox.margin>
                   </Pane>
                </children>
@@ -59,9 +64,9 @@
          <left>
             <VBox prefHeight="739.0" prefWidth="377.0" style="-fx-background-color: #5c7ca3;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Adresse d'origine" style="-fx-font-weight: bold;" textFill="WHITE">
+                  <Label style="-fx-font-weight: bold;" text="Adresse d'origine" textFill="WHITE">
                      <font>
-                        <Font name="Open Sans" size="14.0"  />
+                        <Font name="Open Sans" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="5.0" left="25.0" top="30.0" />
@@ -75,7 +80,7 @@
                         <Insets left="20.0" right="50.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label text="Adresse de destination" style="-fx-font-weight: bold;" textFill="WHITE">
+                  <Label style="-fx-font-weight: bold;" text="Adresse de destination" textFill="WHITE">
                      <font>
                         <Font name="Open Sans" size="14.0" />
                      </font>
@@ -108,7 +113,7 @@
                   </Separator>
                   <Pane prefHeight="28.0" prefWidth="375.0">
                      <children>
-                        <Label text="Distance totale" style="-fx-font-weight: bold;" textFill="WHITE">
+                        <Label style="-fx-font-weight: bold;" text="Distance totale" textFill="WHITE">
                            <font>
                               <Font name="Open Sans" size="14.0" />
                            </font>
@@ -116,7 +121,46 @@
                               <Insets left="20.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="totalDistanceResult" style="-fx-font-weight: bold;" layoutX="129.0" textFill="WHITE">
+                        <Label fx:id="totalDistanceResult" layoutX="129.0" style="-fx-font-weight: bold;" textFill="WHITE">
+                           <font>
+                              <Font name="Open Sans" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Separator opacity="0.59" prefHeight="0.0" prefWidth="377.0">
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Pane prefHeight="173.0" prefWidth="377.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label fx:id="instructions" layoutX="16.0" layoutY="40.0" prefHeight="88.0" prefWidth="354.0" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="instructPicture" fitHeight="60.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </Label>
+                        <Button fx:id="submit1" layoutX="257.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#displayInstruction" prefHeight="37.0" prefWidth="106.0" style="-fx-background-radius: 50px; -fx-background-color: #3869a6; -fx-cursor: HAND;" text="SUIVANT" textFill="#fffefe">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="-3.0" layoutY="-1.0" prefHeight="30.0" prefWidth="208.0" style="-fx-font-weight: bold;" text="Affichages des instructions :" textFill="WHITE">
                            <font>
                               <Font name="Open Sans" size="14.0" />
                            </font>

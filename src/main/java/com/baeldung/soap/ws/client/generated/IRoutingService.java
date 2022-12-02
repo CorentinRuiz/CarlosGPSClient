@@ -16,11 +16,11 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "IService1", targetNamespace = "http://tempuri.org/")
+@WebService(name = "IRoutingService", targetNamespace = "http://tempuri.org/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
-public interface IService1 {
+public interface IRoutingService {
 
 
     /**
@@ -30,7 +30,7 @@ public interface IService1 {
      * @return
      *     returns com.baeldung.soap.ws.client.generated.BestItinerary
      */
-    @WebMethod(operationName = "GetItinerary", action = "http://tempuri.org/IService1/GetItinerary")
+    @WebMethod(operationName = "GetItinerary", action = "http://tempuri.org/IRoutingService/GetItinerary")
     @WebResult(name = "GetItineraryResult", targetNamespace = "http://tempuri.org/")
     @RequestWrapper(localName = "GetItinerary", targetNamespace = "http://tempuri.org/", className = "com.baeldung.soap.ws.client.generated.GetItinerary")
     @ResponseWrapper(localName = "GetItineraryResponse", targetNamespace = "http://tempuri.org/", className = "com.baeldung.soap.ws.client.generated.GetItineraryResponse")
