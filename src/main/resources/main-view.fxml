@@ -147,7 +147,7 @@
                         <Insets top="40.0" />
                      </VBox.margin>
                      <children>
-                        <Label fx:id="instructions" layoutX="16.0" layoutY="40.0" prefHeight="88.0" prefWidth="354.0" textFill="WHITE">
+                        <Label fx:id="instructions" layoutX="16.0" layoutY="40.0" prefHeight="88.0" prefWidth="354.0" text="Aucune instruction, faite votre recherche pour afficher les instructions de route ici" textFill="WHITE" wrapText="true">
                            <font>
                               <Font size="18.0" />
                            </font>

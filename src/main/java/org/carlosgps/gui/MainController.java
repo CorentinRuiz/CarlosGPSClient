@@ -1,7 +1,11 @@
 package org.carlosgps.gui;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -11,11 +15,13 @@ import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.carlosgps.classes.GPSPoint;
 import org.carlosgps.classes.InstructionsConsumer;
 import org.carlosgps.classes.ItineraryRequesterService;
 
 
+import java.io.IOException;
 import java.net.URL;
 
 import java.util.Objects;
@@ -78,6 +84,11 @@ public class MainController implements Initializable {
         ItineraryRequesterService itineraryRequesterService = new ItineraryRequesterService();
         itineraryRequesterService.setBestItinerary(originAddress,destAddress);
 
+        if(itineraryRequesterService.getBestItinerary() == null){
+            launchErrorWindow("Aucune station de vélo n'a été trouvé sur votre trajet (Aucune station < 3km de votre point de départ)");
+            return;
+        }
+
         totalDistanceResult.setText(itineraryRequesterService.getTotalDistance().toString() +" m");
 
         engine.getDocument().getElementById("origin").setAttribute("value",itineraryRequesterService.getOriginPoint().toString());
@@ -138,6 +149,30 @@ public class MainController implements Initializable {
         }
 
         return null;
+    }
+
+    public void launchErrorWindow(String errorStr){
+        Parent root;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("error-view.fxml")));
+            Stage stage = new Stage();
+            stage.setTitle("Error Window");
+            stage.setScene(new Scene(root, 350, 280));
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.getIcons().add(new Image(getClass().getClassLoader().getResource("icons/close.png").toString()));
+            stage.show();
+            Button ok = (Button) stage.getScene().lookup("#okButton");
+            Label error = (Label) stage.getScene().lookup("#errorLabel");
+
+            error.setText(errorStr);
+            error.setWrapText(true);
+            error.setTextAlignment(TextAlignment.JUSTIFY);
+
+            ok.setOnMouseClicked(mouseEvent -> stage.hide());
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

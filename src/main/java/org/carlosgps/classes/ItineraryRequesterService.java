@@ -67,4 +67,8 @@ public class ItineraryRequesterService {
     public void setBestItinerary(String origin, String destination) {
        bestItinerary = routingServiceInterface.getItinerary(origin,destination);
     }
+
+    public BestItinerary getBestItinerary() {
+        return bestItinerary;
+    }
 }
